@@ -7,8 +7,7 @@ const TestModel = require('../../models/TestModel');
 // @route   POST api/test
 // @desc    Adds some data to db
 // @access  Public - we can make private later
-router.post('/', async (req,res) => {
-  
+router.post('/', async (req, res) => {
   // extract fields from req - js makes it easy
   // lets say the req has {name: 'Sean', email: 'sean@gmail.com', age: 20}
   // we can extract like this:
@@ -19,7 +18,7 @@ router.post('/', async (req,res) => {
     let test = new TestModel({
       name,
       email,
-      age
+      age,
     });
 
     // save the new model
@@ -38,7 +37,7 @@ router.post('/', async (req,res) => {
 router.get('/', async (res, res) => {
   try {
     // get by name, lets say the user sends the name as a req
-    const test = await TestModel.find({name: req.body.name});
+    const test = await TestModel.find({ name: req.body.name });
 
     res.json(test);
   } catch (err) {
