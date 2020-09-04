@@ -1,0 +1,3 @@
+{
+  "mongoURI": "<put mongoDB connection string here>"
+}
